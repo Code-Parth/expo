@@ -32,7 +32,7 @@ export default function App() {
     y: 0,
     z: 0,
   });
-  const [subscription, setSubscription] = useState(null);
+  const [subscription, setSubscription] = useState<ReturnType<typeof Gyroscope.addListener> | null>(null);
 
   const _slow = () => Gyroscope.setUpdateInterval(1000);
   const _fast = () => Gyroscope.setUpdateInterval(16);
